@@ -47,6 +47,7 @@ if __name__=="__main__":
     li2=[-1,56,0,-8,4,75]
     s1=Solution()
     print(s1.maxSlidingWindow(li,3))
+    print("徐健在github中的修改")
 
 
 
