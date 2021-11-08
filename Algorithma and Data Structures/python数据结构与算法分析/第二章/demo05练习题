@@ -1,0 +1,89 @@
+# 1.设计一个实验，证明列表的索引操作为常数阶。
+# 2.设计一个实验，证明字典的取值操作和赋值操作为常数阶。
+# 3.设计一个实验，针对列表和字典比较del操作的性能。
+# 4.给定一个数字列表，其中的数字随机排列，编写一个线性阶算法，找出第 kkk 小的元素，并解释为何该算法的阶是线性的。
+# 5.针对前一个练习，能将算法的时间复杂度优化到 O(nlog⁡n)O(n\log n)O(nlogn) 吗？
+
+# 1.设计一个实验，证明列表的索引操作为常数阶。
+# import random
+# import timeit
+# for i in range(1000,100001,2000):
+#     t1=timeit.Timer("x[random.randrange(%d)]"%i,"from __main__ import random,x")
+#
+#     x=list(range(i))
+#     time_a=t1.timeit(number=1000)
+#
+#     x=list(range(i))
+#     time_b=t1.timeit(number=1000)
+#     print()
+#     print("%d, %10.3f, %10.3f" % (i, time_a, time_b))
+
+
+
+
+# 2.设计一个实验，证明字典的取值操作和赋值操作为常数阶。
+# import timeit
+# import random
+# import math
+# for i in range(1000,100001,1000):
+#     t1=timeit.Timer("x[random.randrange(%i)]"%i,"from __main__ import random,x")
+#     t2=timeit.Timer("x[random.randrange(%i)]=math.pi"%i,"from __main__ import random,math,x")
+#
+#     x={y:None for y in range(i)}
+#     time_0=t1.timeit(number=1000)
+#
+#     x={y:None for y in range(i)}
+#     time_1=t2.timeit(number=1000)
+#
+#     print("%10.3f, %10.3f" % (time_0, time_1))
+#
+#     #每一个前面都要有一个%
+#     # print("%10.3f,10.3f" %(time_0 , time_1))
+
+
+
+# 3.设计一个实验，针对列表和字典比较del操作的性能。
+    #pop(index)
+    #dict使用del(index)
+import timeit
+import random
+for i in range(1000,100000,2000):
+    # t1=timeit.Timer("x.pop(random.randrange()"%i,"from __main__ import random,x")
+    t2=timeit.Timer("del x[random.randrange(1,10)]","from __main__ import random,x")
+
+
+    x=list(range(i))
+    # time_1=t1.timeit(number=1000)
+    x = {y:random.randint(1,5) for y in range(i)}
+    time_2=t2.timeit(number=1000)
+
+    # print("%d,%10.3f,%10.3f"%(i,time_1,time_2))
+    print("%d,%10.3f"%(i,time_2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
